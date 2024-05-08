@@ -28,7 +28,7 @@ const greet = async () => {
     var age = args[Math.floor(Math.random() * args.length)];
     var random = Math.floor(Math.random() * 34) + 1;
     var requestUrl = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20220601?applicationId=" + process.env.RAKUTEN_APP_ID
-        + "&age=" + age + "&sex=1&carrier=0&page=" + random;
+        + "&age=" + age + "&sex=1&carrier=0&page=" + random + "&affiliateId=" + process.env.RAKUTEN_AFFILIATE_ID;
     console.log(requestUrl);
     await axios.get(requestUrl, {
     }).then(async (response) => {
